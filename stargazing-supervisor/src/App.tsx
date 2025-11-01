@@ -12,7 +12,8 @@ function App() {
       <Game />
       <Chat />
     </div>
-  );
+    </>
+  );  
 }
 
 export default App;
