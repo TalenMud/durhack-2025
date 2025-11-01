@@ -2,12 +2,13 @@
 import { Chatbox, type SendMessageEvent } from '@talkjs/react-components';
 import '@talkjs/react-components/default.css';
 import { getTalkSession } from '@talkjs/core';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 import { markdownToContent } from "./toContent.ts"
 import { contentToMarkdown } from "./toMarkdown.ts"
 import { getRandomPersonaPrompt } from './randomGuy.ts';
 
+const [personPrompt, setPersonPrompt] = useState('');
 
 
 function Chat() {
@@ -55,7 +56,7 @@ function Chat() {
           "system_instruction": {
       "parts": [
         {
-          "text": JSON.stringify(getRandomPersonaPrompt())
+          "text": JSON.stringify(prompt)
         }
       ]
     },
@@ -72,9 +73,7 @@ function Chat() {
       });
 
       const botResponse = await response.json();
-      console.log(botResponse);
       const botMessage = botResponse.candidates[0].content.parts[0].text; // Adjust based on your API response structure
-      console.log(botMessage)
       // 2. Send the chatbot's reply back to the conversation
       // We need a session for the BOT to send a message as the bot
       const botSession = getTalkSession({
