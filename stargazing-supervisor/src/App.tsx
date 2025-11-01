@@ -1,13 +1,17 @@
-import React from 'react';
+// import React from 'react';
 import Game from './components/Game';
+// import Chat from './Chat';
+// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
-  return (
+  return (<>
     <div>
-      <h1>Cafe Queue Minigame</h1>
+      <h1>Who's that historical person?</h1>
       <Game />
+      {/* <Chat /> */}
     </div>
-  );
+    </>
+  );  
 }
 
 export default App;
