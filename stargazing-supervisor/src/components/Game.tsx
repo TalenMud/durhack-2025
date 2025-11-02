@@ -30,11 +30,16 @@ const buttonDisplayMap: { [key: string]: { text: string; emoji: string } } = {
   Caveman: { text: 'Caveman', emoji: '🧌' },
   AncientEgyptianScribe: { text: 'Ancient Egyptian Scribe', emoji: '🛕' },
   GreekPhilosopher: { text: 'Greek Philosopher', emoji: '🏛️' },
-  Wizard: { text: 'Middle Age Wizard', emoji: '🪄' },
+  WitchHuntEraWitch: { text: 'Witch Hunt Era Witch', emoji: '🧙‍♀️' },
   ChildWorker: { text: 'Victorian Child Worker', emoji: '👧🏻' },
   SoldierWW2: { text: 'WW2 Soldier', emoji: '🪖' },
   Teen80s: { text: '80s Teen', emoji: '👦' },
-  Vampire: { text: 'Vampire', emoji: '🦇' },
+  RomanCenturion: { text: 'Roman Centurion', emoji: '🛡️' },
+  VikingExplorer: { text: 'Viking Explorer', emoji: '⚔️' },
+  MedievalPeasant: { text: 'Medieval Peasant', emoji: '🌾' },
+  RenaissanceArtist: { text: 'Renaissance Artist', emoji: '🎨' },
+  Samurai: { text: 'Feudal Samurai', emoji: '🗡️' },
+  MayanPriest: { text: 'Mayan Priest', emoji: '🌴' },
 };
 
 // Function to get a random subset of an array
