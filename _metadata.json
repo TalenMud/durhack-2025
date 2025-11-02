@@ -1,0 +1,55 @@
+{
+  "hash": "9bc3e572",
+  "configHash": "dfd67730",
+  "lockfileHash": "cd751811",
+  "browserHash": "204a0437",
+  "optimized": {
+    "react": {
+      "src": "../../react/index.js",
+      "file": "react.js",
+      "fileHash": "aac5e5c4",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "72438bc6",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "7df363f0",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "84c1c563",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "bfdc77df",
+      "needsInterop": true
+    },
+    "tailwindcss": {
+      "src": "../../tailwindcss/dist/lib.mjs",
+      "file": "tailwindcss.js",
+      "fileHash": "b4ece632",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-RREYUWCL": {
+      "file": "chunk-RREYUWCL.js"
+    },
+    "chunk-TOPHTIRU": {
+      "file": "chunk-TOPHTIRU.js"
+    },
+    "chunk-BUSYA2B4": {
+      "file": "chunk-BUSYA2B4.js"
+    }
+  }
+}

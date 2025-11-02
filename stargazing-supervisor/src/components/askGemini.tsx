@@ -1,16 +1,4 @@
 import { GoogleGenAI } from "@google/genai";
-<<<<<<< HEAD
-
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDykp8qgYySAjECdY-jsfOmc8cXQ4G-z9U" });
-
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: "LOL",
-  });
-  console.log(response.text);
-}
-=======
 import { useEffect } from "react";
 
 const ai = new GoogleGenAI({ apiKey: "AIzaSyDykp8qgYySAjECdY-jsfOmc8cXQ4G-z9U" });
@@ -28,6 +16,5 @@ export default function GeminiPing() {
     })();
   }, []);
   return null;
->>>>>>> ebf4012 (lol)
 
 main();
