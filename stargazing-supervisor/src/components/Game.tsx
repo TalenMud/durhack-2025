@@ -2,6 +2,21 @@ import { useState } from 'react';
 import { getOrSetPersona, getPersonaInternalId, overwritePersona } from '../personaStore.ts';
 import { personaList, type PersonaPrompt} from '../randomGuy.ts';
 
+import ahhhh from '../sfx/ahhhh.mp3';
+import bruh from '../sfx/bruh.ogg';
+import clashOfClans from '../sfx/clash_of_clans.mp3';
+import clashRoyale from '../sfx/clash_royale.mp3';
+import fbiOpenUp from '../sfx/fbi_open_up.mp3';
+import getOutTuco from '../sfx/get_out_tuco.mp3';
+import goofyAhhLaugh from '../sfx/goofy_ahh_laugh.ogg';
+import goofyAhhSounds from '../sfx/goofy_ahh_sounds.ogg';
+import iLikeYaCutG from '../sfx/I_like_ya_cut_g.mp3';
+import sadViolin from '../sfx/sad_violin.ogg';
+import stopTheCap from '../sfx/stop_the_cap.mp3';
+import vineboom from '../sfx/vineboom.mp3';
+import wetFartMeme from '../sfx/wet_fart_meme.mp3';
+import yeet from '../sfx/yeet.mp3';
+
 
 const chatbotPersona = getOrSetPersona();
 const getBestStreak = (): number => {
@@ -53,18 +68,17 @@ function Game(props:{setCurrentConversationId:(id:string)=> void}) {
     props.setCurrentConversationId(`human-vs-bot-${crypto.randomUUID()}`);
     
     // Get the current persona used by the chatbot
-  const chatbotPersona = getOrSetPersona();
+    const chatbotPersona = getOrSetPersona();
 
-  // Generate a random subset excluding the chatbot's persona
-  const remainingPersonas = personaList.filter(persona => persona.internalId !== chatbotPersona.internalId);
-  const randomSubset = getRandomSubset(remainingPersonas, 3);
-
+    // Generate a random subset excluding the chatbot's persona
+    const remainingPersonas = personaList.filter(persona => persona.internalId !== chatbotPersona.internalId);
+    const randomSubset = getRandomSubset(remainingPersonas, 3);
     
     // Add the chatbot's persona to the list and shuffle
-  const newButtonPersonas = [...randomSubset, chatbotPersona].sort(() => 0.5 - Math.random());
+    const newButtonPersonas = [...randomSubset, chatbotPersona].sort(() => 0.5 - Math.random());
 
-  // Update the state with the new button personas
-  setButtonPersonas(newButtonPersonas);
+    // Update the state with the new button personas
+    setButtonPersonas(newButtonPersonas);
   }
 
   function checkID(guessValue: string) {
@@ -75,6 +89,11 @@ function Game(props:{setCurrentConversationId:(id:string)=> void}) {
     console.log("Persona ID:", personaID);
     console.log("Guess Value:", guessValue);
     if (personaID === guessValue) {
+      const sounds = [
+          clashOfClans, clashRoyale, iLikeYaCutG
+        ];
+      const sound = new Audio(sounds[Math.floor(Math.random() * sounds.length)]);
+      sound.play();
       alert("Correct! You guessed the historical person!");
 
       // CORRECT GUESS: Increment current streak
@@ -86,6 +105,13 @@ function Game(props:{setCurrentConversationId:(id:string)=> void}) {
         localStorage.setItem('personaBestStreak', currentStreak.toString());
       }
     } else {
+      const sounds = [
+          ahhhh, bruh, fbiOpenUp, getOutTuco,
+          goofyAhhLaugh, goofyAhhSounds, sadViolin,
+          stopTheCap, vineboom, wetFartMeme, yeet
+        ];
+      const sound = new Audio(sounds[Math.floor(Math.random() * sounds.length)]);
+      sound.play();
       alert(`Incorrect guess. The persona was ${buttonDisplayMap[personaID].text}. Your streak is broken!`);
       // INCORRECT GUESS: Reset current streak
       setCurrentStreak(0);
@@ -102,14 +128,16 @@ function Game(props:{setCurrentConversationId:(id:string)=> void}) {
             🔥 Current Streak: {currentStreak} | 🏆 Best Streak: {bestStreak}
         </h2>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 my-4 buttons">
         {/* Map over the state variable which holds the 4 random personas */}
         {buttonPersonas.map((persona) => {
           const display = buttonDisplayMap[persona.internalId] || { text: persona.internalId, emoji: '' };
           return (
             <button 
               key={persona.internalId} 
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-1 rounded-full" 
+              className="bg-black text-white border-2 border-white 
+                font-bold py-2 px-4 rounded transition duration-300 
+                hover:bg-white hover:text-black hover:border-black"
               onClick={() => checkID(persona.internalId)}
             >
               {display.text} {display.emoji}
