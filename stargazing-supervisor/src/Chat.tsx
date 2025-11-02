@@ -98,7 +98,6 @@ function Chat(props:{currentConversationId:string}) {
   }, [appId, conversationId]);
 
   return (
-    <div className='medievalChatBox'>
     <Chatbox
       style={{ width: '100%', height: '500px',
         "fontFamily": "EB Garamond, serif",
@@ -106,6 +105,7 @@ function Chat(props:{currentConversationId:string}) {
         "borderRadius": 4,
         "accentColor": "#7b1113",
        }}
+      className='medievalChatBox'
       // @ts-ignore
       host="durhack.talkjs.com"
       appId={appId}
@@ -113,7 +113,6 @@ function Chat(props:{currentConversationId:string}) {
       conversationId={conversationId}
       onSendMessage={handleSendMessage}
     />
-    </div>
   );
 }
 
