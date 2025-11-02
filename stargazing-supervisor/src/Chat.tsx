@@ -3,6 +3,7 @@ import { Chatbox, type SendMessageEvent } from '@talkjs/react-components';
 import '@talkjs/react-components/default.css';
 import { getTalkSession } from '@talkjs/core';
 import { useEffect, useCallback, useState } from 'react';
+import './chatbox.css';
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 import { markdownToContent } from "./toContent.ts";
 import { contentToMarkdown } from "./toMarkdown.ts";
@@ -97,8 +98,14 @@ function Chat(props:{currentConversationId:string}) {
   }, [appId, conversationId]);
 
   return (
+    <div className='medievalChatBox'>
     <Chatbox
-      style={{ width: '100%', height: '500px' }}
+      style={{ width: '100%', height: '500px',
+        "fontFamily": "EB Garamond, serif",
+        "background": "#f8f1e4",
+        "borderRadius": 4,
+        "accentColor": "#7b1113",
+       }}
       // @ts-ignore
       host="durhack.talkjs.com"
       appId={appId}
@@ -106,6 +113,7 @@ function Chat(props:{currentConversationId:string}) {
       conversationId={conversationId}
       onSendMessage={handleSendMessage}
     />
+    </div>
   );
 }
 
