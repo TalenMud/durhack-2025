@@ -1,25 +1,19 @@
-# STARGAZING SUPERVISOR
+# PROJECT CHRONOBRIDGE
 
-Welcome to STARGAZING SUPERVISOR, your cafe's very own crystal ball. *Never caught understaffed again!*
+Welcome to **ChronoBridge**, a chatbot that creates a bridge through time, allowing users to chat with *medieval characters*.
 
-STARGAZING SUPERVISOR utilises a prediction model, named 'Old Supervisor' who will assist in predicting coffee shop queue times, and recommend staffing levels based on:
-- Time
-- Weather
-- Location
-and most importantly, **meteor showers!**
+Players chat with one of eight unique medieval personas, and prompts them to guess the correct character from 4 given options.
 
 
 ## FEATURES
-- A chat with the Old Supervisor that is specialised to:
-	- Predict hourly queue time
-	- Recommend staffing levels
-	- Highlight factors influencing queues
-
+- A chat with medieval characters that reveals its personality and traits through their words 🏰⚔️
+- Prompts the user to guess the character based on their words ❓
+- Each correct guess earns players one *gold coin*, which is stackable 🪙
+- *Crazy and chaotic user interface* filled with memes that make earning gold coins rewarding 😈
 
 ## INSTALLATION INSTRUCTIONS
 1. Clone the repository
-2. Run these commands:
-	"npx vite"
+2. Install dependencies
+3. Run the app using vite
 
 ## DATA SOURCES
-
