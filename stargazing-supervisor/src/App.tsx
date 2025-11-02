@@ -2,11 +2,8 @@ import Game from './components/Game';
 import Header from './components/Header';
 import Timeline from './components/Timeline';
 import Chat from './Chat';
-import { getRandomPersonaPrompt } from './randomGuy';
-// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-
-
+import { useState } from 'react';
+import { getOrSetPersona } from './personaStore.ts';
 
 
 function App() {
