@@ -8,7 +8,7 @@ import { markdownToContent } from "./toContent.ts"
 import { contentToMarkdown } from "./toMarkdown.ts"
 import { getRandomPersonaPrompt } from './randomGuy.ts';
 
-const [personPrompt, setPersonPrompt] = useState('');
+// const [personPrompt, setPersonPrompt] = useState('');
 
 
 function Chat() {
@@ -16,10 +16,6 @@ function Chat() {
   const humanId = 'me';
   const botId = 'bot';
   const conversationId = 'human-vs-bot';
-
-
-
-  
 
 
   // --- Setup Users and Conversation ---

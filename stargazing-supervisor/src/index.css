@@ -3,4 +3,10 @@
 body {
   font-family: sans-serif;
   margin: 20px;
+  background-color: black;
+  color: white;
+}
+
+header {
+  justify-content: center;
 }
