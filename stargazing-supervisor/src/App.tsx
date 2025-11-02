@@ -1,22 +1,23 @@
 import Game from './components/Game';
 import Header from './components/Header';
 import Chat from './Chat';
-import { getRandomPersonaPrompt } from './randomGuy';
-// import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-
-
+import { useState } from 'react';
+import { getOrSetPersona } from './personaStore.ts';
 
 
 function App() {
-  const PersonaPrompt = getRandomPersonaPrompt();
-  return (<>
-    
+  getOrSetPersona();
+
+  const [currentConversationId, setCurrentConversationId] = useState(() => `human-vs-bot-${crypto.randomUUID()}`);
+  
+  return (<>    
     <div>
       <Header />
       <h1>Who's that historical person?</h1>
-      <Game />
-      <Chat />
+      <div className="flex flex-row gap-4">
+        <Chat currentConversationId={currentConversationId}/>
+        <Game setCurrentConversationId={setCurrentConversationId}/>
+      </div>
     </div>
     </>
   );  

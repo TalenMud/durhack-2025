@@ -4,18 +4,16 @@ import '@talkjs/react-components/default.css';
 import { getTalkSession } from '@talkjs/core';
 import { useEffect, useCallback, useState } from 'react';
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-import { markdownToContent } from "./toContent.ts"
-import { contentToMarkdown } from "./toMarkdown.ts"
-import { getRandomPersonaPrompt } from './randomGuy.ts';
-
-// const [personPrompt, setPersonPrompt] = useState('');
+import { markdownToContent } from "./toContent.ts";
+import { contentToMarkdown } from "./toMarkdown.ts";
+import { getPersonaSystemInstruction } from './personaStore.ts';
 
 
-function Chat() {
+function Chat(props:{currentConversationId:string}) {
   const appId = 'tY7b9ysM'; // Your Durhack App ID
   const humanId = 'me';
   const botId = 'bot';
-  const conversationId = 'human-vs-bot';
+  const conversationId = props.currentConversationId;
   const generalInstructions = 
     `Constraints & Tone:
     1. Maintain Character: Speak strictly in the voice, dialect, and persona of your assigned character.
@@ -38,7 +36,7 @@ function Chat() {
     const conversation = session.conversation(conversationId);
     conversation.createIfNotExists();
     conversation.participant(botId).createIfNotExists();
-  }, []);
+  }, [props.currentConversationId]);
 
   // --- The Magic Bit ---
   const handleSendMessage = useCallback(async (event: SendMessageEvent) => {
@@ -58,7 +56,7 @@ function Chat() {
           "system_instruction": {
       "parts": [
         {
-          "text": JSON.stringify(generalInstructions + getRandomPersonaPrompt().systemInstruction)
+          "text": JSON.stringify(generalInstructions + getPersonaSystemInstruction())
         }
       ]
     },
