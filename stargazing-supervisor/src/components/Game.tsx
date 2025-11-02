@@ -30,7 +30,7 @@ const buttonDisplayMap: { [key: string]: { text: string; emoji: string } } = {
   Caveman: { text: 'Caveman', emoji: '🧌' },
   AncientEgyptianScribe: { text: 'Ancient Egyptian Scribe', emoji: '🛕' },
   GreekPhilosopher: { text: 'Greek Philosopher', emoji: '🏛️' },
-  Wizard: { text: 'Middle Age Wizard', emoji: '🪄' },
+  WitchHuntEraWitch: { text: 'Witch Hunt Era Witch', emoji: '🧙‍♀️' },
   ChildWorker: { text: 'Victorian Child Worker', emoji: '👧🏻' },
   SoldierWW2: { text: 'WW2 Soldier', emoji: '🪖' },
   Teen80s: { text: '80s Teen', emoji: '👦' },
